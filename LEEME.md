@@ -2,7 +2,9 @@
 
 Esta carpeta contiene la web lista para subir a GitHub Pages u otro hosting estático.
 
-Para añadir un mashup, abre `mashups/Agregar Mashup.command` y elige una opción: `1` añade un mashup normal y `2` importa una lista en bloque desde el portapapeles. Para el modo bloque, copia desde tu bloc de notas los títulos y enlaces de SoundCloud; el comando los detectará y te pedirá el audio preview de cada mashup uno por uno.
+Para añadir un mashup, abre `mashups/Agregar Mashup.command` y elige una opción: `1` añade un mashup normal, `2` importa una lista en bloque desde el portapapeles y `3` edita un mashup ya publicado. Para el modo bloque, copia desde tu bloc de notas los títulos y enlaces de SoundCloud; el comando los detectará y te pedirá el audio preview de cada mashup uno por uno.
+
+En `3`, selecciona el mashup por número y podrás cambiar el título, el enlace de YouTube, el enlace de SoundCloud (actualiza automáticamente portada y Buy) y, si quieres, arrastrar una portada personalizada. Deja un campo vacío para conservarlo.
 
 En ambos modos, tras obtener el título buscará vídeos parecidos en el canal de YouTube de DJgeeorge y te enseñará el título del resultado antes de usarlo. Puedes aceptarlo, ver alternativas, buscar con otro texto o pegar el enlace manualmente. Si ese mashup no tiene vídeo completo, elige `H` o escribe `no hay`: en la web aparecerá «Vídeo completo próximamente en YouTube».
 

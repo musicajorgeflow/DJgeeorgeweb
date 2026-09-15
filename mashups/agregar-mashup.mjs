@@ -255,6 +255,55 @@ async function addMashup({ importedTitle = '', soundCloudUrl: importedSoundCloud
   console.log(`\n✓ “${title}” añadido. La portada${soundCloudUrl ? ' y el enlace Buy vienen de SoundCloud' : ''}.\n`);
 }
 
+async function saveEntries(entries) {
+  await fs.writeFile(database, `${JSON.stringify(entries, null, 2)}\n`);
+  await fs.writeFile(browserData, `window.DJGEEORGE_MASHUPS = ${JSON.stringify(entries, null, 2)};\n${browserStyle}\n`);
+}
+
+async function editMashup() {
+  const entries = JSON.parse(await fs.readFile(database, 'utf8'));
+  if (!entries.length) throw new Error('No hay mashups para editar.');
+  console.log('\n--- Editar mashup ---\n');
+  entries.forEach((entry, index) => console.log(`${index + 1}. ${entry.title}`));
+  const number = Number((await ask('\nNúmero del mashup a editar: ')).trim());
+  if (!Number.isInteger(number) || number < 1 || number > entries.length) throw new Error('Elige un número válido de la lista.');
+  const entry = entries[number - 1];
+  console.log('\nPulsa Enter en un campo para conservar su valor actual.');
+
+  const title = (await ask(`Título [${entry.title}]: `)).trim() || entry.title;
+  const youtubeValue = (await ask(`Enlace YouTube [${entry.listen || 'sin vídeo'}] ("no hay" para próximo): `)).trim();
+  if (youtubeValue) {
+    const youtube = youtubeChoice(youtubeValue);
+    entry.listen = youtube.listen;
+    entry.youtubePending = youtube.pending;
+  }
+
+  const soundCloudUrl = (await ask('Nuevo enlace de SoundCloud (Enter para conservar portada/Buy): ')).trim();
+  let coverWasUpdated = false;
+  if (soundCloudUrl) {
+    console.log('Actualizando portada y enlace Buy desde SoundCloud…');
+    const info = await soundCloudInfo(soundCloudUrl);
+    const slug = `${slugify(title) || 'mashup'}-${Date.now()}`;
+    const coverName = await copyRemoteCover(info.cover, path.join(assets, `${slug}-cover`));
+    entry.cover = `../mashups/assets/${coverName}`;
+    entry.download = info.buy;
+    coverWasUpdated = true;
+    console.log(entry.download ? '✓ Portada y enlace Buy actualizados.' : '✓ Portada actualizada; no hay enlace Buy en SoundCloud.');
+  }
+
+  const coverChoice = (await ask('Portada: [1] conservar / [2] arrastrar portada personalizada: ')).trim();
+  if (coverChoice === '2') {
+    const slug = `${slugify(title) || 'mashup'}-${Date.now()}`;
+    const coverName = await localCover(path.join(assets, `${slug}-cover`));
+    entry.cover = `../mashups/assets/${coverName}`;
+    coverWasUpdated = true;
+  } else if (coverChoice && coverChoice !== '1') throw new Error('Elige 1, 2 o pulsa Enter.');
+
+  entry.title = title;
+  await saveEntries(entries);
+  console.log(`\n✓ “${entry.title}” actualizado.${coverWasUpdated ? ' La portada nueva ya está guardada.' : ''}\n`);
+}
+
 async function importMashupsFromClipboard() {
   console.log('\nCopia el bloque de tu bloc de notas y vuelve aquí.');
   await ask('Pulsa Enter cuando lo tengas copiado: ');
@@ -288,7 +337,8 @@ console.log('\n--- Añadir mashups DJgeeorge ---');
 try {
   console.log('\n1) Añadir un mashup');
   console.log('2) Importar una lista en bloque desde el portapapeles');
-  const mode = (await ask('Elige 1 o 2: ')).trim();
+  console.log('3) Editar un mashup existente');
+  const mode = (await ask('Elige 1, 2 o 3: ')).trim();
   if (mode === '1') {
     let addAnother = 's';
     while (['s', 'si', 'sí'].includes(addAnother)) {
@@ -298,6 +348,8 @@ try {
     }
   } else if (mode === '2') {
     await importMashupsFromClipboard();
+  } else if (mode === '3') {
+    await editMashup();
   } else {
     console.log('\nNo se ha añadido nada.');
   }
