@@ -1,8 +1,8 @@
 window.DJGEEORGE_MASHUPS = [
   {
     "title": "BbY WoW X La Graciosa",
-    "listen": "",
-    "youtubePending": true,
+    "listen": "https://youtu.be/26q6pnvShw8",
+    "youtubePending": false,
     "download": "https://droploud.com/track/486cba70-96aa-47c9-8257-9ce63802a94a",
     "cover": "../mashups/assets/bby-wow-x-la-graciosa-1789497737169-cover.jpg",
     "preview": "../mashups/assets/bby-wow-x-la-graciosa-1789497737169-preview.mp3",
