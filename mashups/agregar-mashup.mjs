@@ -264,7 +264,7 @@ async function addMashup({ importedTitle = '', soundCloudUrl: importedSoundCloud
   const buttonColors = downloadColors(await ask('Colores del botón Descargar (opcional; 2 o 3 hex separados por comas, ej. 1677ff, ff5426): '));
 
   const entries = JSON.parse(await fs.readFile(database, 'utf8'));
-  entries.unshift({ title, listen: youtube.listen, youtubePending: youtube.pending, download, cover: `../mashups/assets/${coverName}`, preview: previewName ? `../mashups/assets/${previewName}` : '', ...(buttonColors.length ? { downloadColors: buttonColors } : {}) });
+  entries.unshift({ title, listen: youtube.listen, youtubePending: youtube.pending, publishedAt: new Date().toISOString(), download, cover: `../mashups/assets/${coverName}`, preview: previewName ? `../mashups/assets/${previewName}` : '', ...(buttonColors.length ? { downloadColors: buttonColors } : {}) });
   await fs.writeFile(database, `${JSON.stringify(entries, null, 2)}\n`);
   await fs.writeFile(browserData, `window.DJGEEORGE_MASHUPS = ${JSON.stringify(entries, null, 2)};\n${browserStyle}\n`);
   console.log(`\n✓ “${title}” añadido. La portada${soundCloudUrl ? ' y el enlace Buy vienen de SoundCloud' : ''}.\n`);
