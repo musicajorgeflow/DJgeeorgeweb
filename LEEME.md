@@ -10,6 +10,8 @@ En ambos modos, tras obtener el título buscará vídeos parecidos en el canal d
 
 Pega el enlace de la canción en SoundCloud para que el comando descargue su portada automáticamente y use el enlace **Buy** de esa página para el botón «Descargar» de la web. Si esa canción no tiene Buy, el botón queda desactivado. Si dejas el enlace de SoundCloud vacío, puedes arrastrar una imagen propia y pegar manualmente el enlace de descarga/Buy.
 
+Al añadir cada mashup, puedes elegir opcionalmente el degradado del botón «Descargar»: pega dos o tres colores hexadecimales separados por comas, por ejemplo `1677ff, ff5426` o `#1677ff, #ff5426, ffd166`. Pulsa Enter para usar el degradado predeterminado.
+
 La primera vez que uses la búsqueda de YouTube, pega tu API key cuando el comando te la pida. Se guarda solo en `mashups/.youtube-api-key`, con permisos privados y fuera de Git.
 
 Puedes dejar el enlace de YouTube y el preview vacíos. En ese caso, sus controles aparecerán como no disponibles; la tarjeta se publicará igualmente.

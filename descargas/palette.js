@@ -1,4 +1,5 @@
 (() => {
+  const slug = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   const gradients = {
     'de-lejitos-remix-x-love': 'linear-gradient(120deg,#737373,#8b5cf6)',
     'caliente-x-8-cositas': 'linear-gradient(120deg,#ff3131,#ff77b7)',
@@ -17,7 +18,10 @@
     const button = card.querySelector('.action.download:not(.disabled)');
     if (!button) return;
     const id = card.id.replace('mashup-', '');
-    button.style.background = gradients[id] || defaultGradient;
+    const colors = (window.DJGEEORGE_MASHUPS || []).find(item => slug(item.title) === id)?.downloadColors;
+    button.style.background = Array.isArray(colors) && colors.length >= 2
+      ? `linear-gradient(120deg,${colors.join(',')})`
+      : gradients[id] || defaultGradient;
     button.style.color = '#fff';
     button.style.textShadow = '0 1px 8px #0008';
   });

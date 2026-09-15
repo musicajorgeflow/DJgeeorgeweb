@@ -45,6 +45,19 @@ function youtubeChoice(value) {
   return { listen: validYouTubeUrl(value), pending: false };
 }
 
+function downloadColors(value) {
+  if (!value.trim()) return [];
+  const colors = value.split(',').map(color => color.trim()).filter(Boolean);
+  if (colors.length < 2 || colors.length > 3) throw new Error('Escribe dos o tres colores separados por comas.');
+  return colors.map(color => {
+    const hex = color.replace(/^#/, '');
+    if (!/^[0-9a-f]{3,4}$|^[0-9a-f]{6}$|^[0-9a-f]{8}$/i.test(hex)) {
+      throw new Error(`“${color}” no es un color hexadecimal válido.`);
+    }
+    return `#${hex}`;
+  });
+}
+
 async function youtubeKey() {
   try {
     const key = (await fs.readFile(youtubeKeyFile, 'utf8')).trim();
@@ -248,8 +261,10 @@ async function addMashup({ importedTitle = '', soundCloudUrl: importedSoundCloud
     await fs.copyFile(previewPath, path.join(assets, previewName));
   }
 
+  const buttonColors = downloadColors(await ask('Colores del botón Descargar (opcional; 2 o 3 hex separados por comas, ej. 1677ff, ff5426): '));
+
   const entries = JSON.parse(await fs.readFile(database, 'utf8'));
-  entries.unshift({ title, listen: youtube.listen, youtubePending: youtube.pending, download, cover: `../mashups/assets/${coverName}`, preview: previewName ? `../mashups/assets/${previewName}` : '' });
+  entries.unshift({ title, listen: youtube.listen, youtubePending: youtube.pending, download, cover: `../mashups/assets/${coverName}`, preview: previewName ? `../mashups/assets/${previewName}` : '', ...(buttonColors.length ? { downloadColors: buttonColors } : {}) });
   await fs.writeFile(database, `${JSON.stringify(entries, null, 2)}\n`);
   await fs.writeFile(browserData, `window.DJGEEORGE_MASHUPS = ${JSON.stringify(entries, null, 2)};\n${browserStyle}\n`);
   console.log(`\n✓ “${title}” añadido. La portada${soundCloudUrl ? ' y el enlace Buy vienen de SoundCloud' : ''}.\n`);
