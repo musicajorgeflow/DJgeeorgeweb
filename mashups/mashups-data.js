@@ -3,9 +3,9 @@ window.DJGEEORGE_MASHUPS = [
     "title": "BbY WoW X La Graciosa",
     "listen": "",
     "youtubePending": true,
-    "download": "",
-    "cover": "../mashups/assets/bby-wow-x-la-graciosa-1789497567148-cover.jpg",
-    "preview": "../mashups/assets/bby-wow-x-la-graciosa-1789497567148-preview.mp3"
+    "download": "https://droploud.com/track/486cba70-96aa-47c9-8257-9ce63802a94a",
+    "cover": "../mashups/assets/bby-wow-x-la-graciosa-1789497737169-cover.jpg",
+    "preview": "../mashups/assets/bby-wow-x-la-graciosa-1789497737169-preview.mp3"
   },
   {
     "title": "De Lejitos (Remix) X Love",
