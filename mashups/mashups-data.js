@@ -1,5 +1,18 @@
 window.DJGEEORGE_MASHUPS = [
   {
+    "title": "GOLFAS DE VERDAD (@DJgeeorge TECHNO REMIX)",
+    "listen": "https://www.youtube.com/watch?v=JjMs7xkNUD4",
+    "youtubePending": false,
+    "publishedAt": "2026-09-18T15:30:00.720Z",
+    "download": "https://droploud.com/track/68ac6105-6b18-4c9b-a5a0-b432a09f53c4",
+    "cover": "../mashups/assets/golfas-de-verdad-djgeeorge-techno-remix-1789683724526-cover.png",
+    "preview": "../mashups/assets/golfas-de-verdad-djgeeorge-techno-remix-1789683724526-preview.mp3",
+    "downloadColors": [
+      "#FFFF00",
+      "#FFC0CB"
+    ]
+  },
+  {
     "title": "BbY WoW X La Graciosa",
     "listen": "https://youtu.be/26q6pnvShw8",
     "youtubePending": false,
