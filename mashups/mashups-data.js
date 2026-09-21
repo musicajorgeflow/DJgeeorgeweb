@@ -1,8 +1,8 @@
 window.DJGEEORGE_MASHUPS = [
   {
     "title": "Baby Lover X Tu Me Dejaste De Querer",
-    "listen": "",
-    "youtubePending": true,
+    "listen": "https://youtu.be/MXGYY9zBW8w",
+    "youtubePending": false,
     "publishedAt": "2026-09-21T21:05:59.049Z",
     "download": "https://djgeeorge.qd.je/descargas",
     "cover": "../mashups/assets/baby-lover-x-tu-me-dejaste-de-querer-1790024710548-cover.jpg",
