@@ -1,9 +1,22 @@
 window.DJGEEORGE_MASHUPS = [
   {
+    "title": "Baby Lover X Tu Me Dejaste De Querer",
+    "listen": "",
+    "youtubePending": true,
+    "publishedAt": "2026-09-21T21:05:59.049Z",
+    "download": "https://djgeeorge.qd.je/descargas",
+    "cover": "../mashups/assets/baby-lover-x-tu-me-dejaste-de-querer-1790024710548-cover.jpg",
+    "preview": "../mashups/assets/baby-lover-x-tu-me-dejaste-de-querer-1790024710548-preview.mp3",
+    "downloadColors": [
+      "#141215",
+      "#E22623"
+    ]
+  },
+  {
     "title": "GOLFAS DE VERDAD (@DJgeeorge TECHNO REMIX)",
     "listen": "https://www.youtube.com/watch?v=JjMs7xkNUD4",
     "youtubePending": false,
-    "publishedAt": "2026-09-18T15:30:00.720Z",
+    "publishedAt": "2026-09-17T22:23:54.720Z",
     "download": "https://droploud.com/track/68ac6105-6b18-4c9b-a5a0-b432a09f53c4",
     "cover": "../mashups/assets/golfas-de-verdad-djgeeorge-techno-remix-1789683724526-cover.png",
     "preview": "../mashups/assets/golfas-de-verdad-djgeeorge-techno-remix-1789683724526-preview.mp3",
