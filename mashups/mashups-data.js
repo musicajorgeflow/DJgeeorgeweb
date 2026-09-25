@@ -1,5 +1,18 @@
 window.DJGEEORGE_MASHUPS = [
   {
+    "title": "QUEVASHACERHOY? |@DJGEEORGE POLARIS RMX",
+    "listen": "https://www.youtube.com/watch?v=hQam19i_itc",
+    "youtubePending": false,
+    "publishedAt": "2026-09-25T14:24:38.387Z",
+    "download": "https://droploud.com/track/eebb8b90-afbf-4fd4-81f3-88e699d69e5a",
+    "cover": "../mashups/assets/quevashacerhoy-djgeeorge-polaris-rmx-1790346236880-cover.jpg",
+    "preview": "../mashups/assets/quevashacerhoy-djgeeorge-polaris-rmx-1790346236880-preview.mp3",
+    "downloadColors": [
+      "#FA5093",
+      "#1E087A"
+    ]
+  },
+  {
     "title": "Baby Lover X Tu Me Dejaste De Querer",
     "listen": "https://youtu.be/MXGYY9zBW8w",
     "youtubePending": false,
