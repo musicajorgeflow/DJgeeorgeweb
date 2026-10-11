@@ -1,5 +1,18 @@
 window.DJGEEORGE_MASHUPS = [
   {
+    "title": "Jukiar (@DJgeeorge Remix)",
+    "listen": "",
+    "youtubePending": true,
+    "publishedAt": "2026-10-11T16:04:06.640Z",
+    "download": "https://droploud.com/track/d3a94c36-708e-4290-af18-374a9f08914d",
+    "cover": "../mashups/assets/jukiar-djgeeorge-remix-1791734588689-cover.jpg",
+    "preview": "../mashups/assets/jukiar-djgeeorge-remix-1791734588689-preview.mp3",
+    "downloadColors": [
+      "#EDB32B",
+      "#0F0701"
+    ]
+  },
+  {
     "title": "Baby Lover X Corrupta",
     "listen": "",
     "youtubePending": true,
