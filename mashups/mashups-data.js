@@ -1,5 +1,18 @@
 window.DJGEEORGE_MASHUPS = [
   {
+    "title": "SORDO DE UN PIE | DJGEEORGE EXTENDED PACK  `[FREE DL]",
+    "listen": "",
+    "youtubePending": true,
+    "publishedAt": "2026-10-14T19:29:52.011Z",
+    "download": "https://droploud.com/track/01d95c7c-a750-41d6-b820-dbd35087df3b",
+    "cover": "../mashups/assets/sordo-de-un-pie-djgeeorge-extended-pack-free-dl-1792006165287-cover.jpg",
+    "preview": "../mashups/assets/sordo-de-un-pie-djgeeorge-extended-pack-free-dl-1792006165287-preview.mp3",
+    "downloadColors": [
+      "#F02502",
+      "#0A2252"
+    ]
+  },
+  {
     "title": "Jukiar (@DJgeeorge Remix)",
     "listen": "",
     "youtubePending": true,
