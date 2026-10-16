@@ -1,0 +1,7 @@
+/* Corrección aislada de la ruta de la fuente usada en la portada. */
+@font-face {
+  font-family: "Champion Gothic";
+  src: url("assets/fonts/Champion%20Gothic%20Welterweight.otf") format("opentype");
+  font-weight: 700;
+  font-display: swap;
+}
