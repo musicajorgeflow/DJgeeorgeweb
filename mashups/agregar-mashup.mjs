@@ -197,6 +197,13 @@ async function localCover(destinationBase) {
   return path.basename(destination);
 }
 
+async function createThumbnail(coverName) {
+  const source = path.join(assets, coverName);
+  const destination = source.replace(/\.[^.]+$/, '-thumb.webp');
+  await new Promise((resolve, reject) => execFile('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-y', '-i', source, '-vf', 'scale=360:360:flags=lanczos', '-frames:v', '1', '-c:v', 'libwebp', '-q:v', '92', destination], error => error ? reject(new Error(`No se pudo crear la miniatura WebP: ${error.message}`)) : resolve()));
+  return path.basename(destination);
+}
+
 function cleanImportedTitle(value) {
   return value.replace(/^[-*•\d.)\s]+/, '').replace(/[\s(\[]+$/, '').trim();
 }
@@ -252,6 +259,7 @@ async function addMashup({ importedTitle = '', soundCloudUrl: importedSoundCloud
     coverName = await localCover(coverBase);
     download = validUrl((await ask('Enlace de descarga/Buy (opcional): ')).trim(), 'El enlace de descarga');
   }
+  await createThumbnail(coverName);
 
   let previewName = '';
   if (previewPath) {
@@ -300,6 +308,7 @@ async function editMashup() {
     const info = await soundCloudInfo(soundCloudUrl);
     const slug = `${slugify(title) || 'mashup'}-${Date.now()}`;
     const coverName = await copyRemoteCover(info.cover, path.join(assets, `${slug}-cover`));
+    await createThumbnail(coverName);
     entry.cover = `../mashups/assets/${coverName}`;
     entry.download = info.buy;
     coverWasUpdated = true;
@@ -310,6 +319,7 @@ async function editMashup() {
   if (coverChoice === '2') {
     const slug = `${slugify(title) || 'mashup'}-${Date.now()}`;
     const coverName = await localCover(path.join(assets, `${slug}-cover`));
+    await createThumbnail(coverName);
     entry.cover = `../mashups/assets/${coverName}`;
     coverWasUpdated = true;
   } else if (coverChoice && coverChoice !== '1') throw new Error('Elige 1, 2 o pulsa Enter.');
