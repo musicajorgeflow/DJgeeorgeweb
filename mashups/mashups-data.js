@@ -1,5 +1,19 @@
 window.DJGEEORGE_MASHUPS = [
   {
+    "title": "Quiero Mas X Red Bull Espiral #06 (@DJgeeorge Extended)",
+    "listen": "",
+    "youtubePending": true,
+    "publishedAt": "2026-10-27T17:55:08.126Z",
+    "download": "https://droploud.com/track/ea1800ca-8020-4b90-ae1b-38f41e440dd0",
+    "cover": "../mashups/assets/quiero-mas-x-red-bull-espiral-06-djgeeorge-extended-1793123480051-cover.png",
+    "preview": "../mashups/assets/quiero-mas-x-red-bull-espiral-06-djgeeorge-extended-1793123480051-preview.mp3",
+    "downloadColors": [
+      "#94956E",
+      "#2C2C20",
+      "#D2D2D2"
+    ]
+  },
+  {
     "title": "Doggy X Beauty And A Beat",
     "listen": "",
     "youtubePending": true,
