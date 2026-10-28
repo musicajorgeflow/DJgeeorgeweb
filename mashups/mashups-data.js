@@ -1,5 +1,19 @@
 window.DJGEEORGE_MASHUPS = [
   {
+    "title": "Retrica X Tratratra (@DJgeeorge Mashup)",
+    "listen": "",
+    "youtubePending": true,
+    "publishedAt": "2026-10-28T16:34:12.636Z",
+    "download": "https://droploud.com/track/bfa1e9cb-64d9-401b-ae01-55700ba8b239",
+    "cover": "../mashups/assets/retrica-x-tratratra-djgeeorge-mashup-1793205173305-cover.png",
+    "preview": "../mashups/assets/retrica-x-tratratra-djgeeorge-mashup-1793205173305-preview.mp3",
+    "downloadColors": [
+      "#FA632A",
+      "#F4AEBF",
+      "#F0518C"
+    ]
+  },
+  {
     "title": "Quiero Mas X Red Bull Espiral #06 (@DJgeeorge Extended)",
     "listen": "",
     "youtubePending": true,
